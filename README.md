@@ -8,7 +8,7 @@ Demo is here:
 
 https://ual-cci.github.io/maxiInstruments-template/
 
-maxiInstruments is written and maintained by louismac as part of the machine learning lib for creatives, learner.js, which was created as part of the mimic project, funded by UKRI
+maxiInstruments is written and maintained by louismac as part of the machine learning lib for creatives, learner.js, which was created as part of the mimic project, funded by UKRI. maxiInstruments makes my Maximilian library much easier to use in js, for which I am eternally grateful.
 
 https://github.com/Louismac/learnerjs
 
