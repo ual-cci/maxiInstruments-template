@@ -1,0 +1,49 @@
+<html>
+<head>
+  <!-- must use the keyword 'crossorigin' when specifying src !! -->
+ <script src="enable-threads.js"></script>
+  <script crossorigin src = "maxiInstruments.v.0.7.2.js"></script>
+</head>
+<body>
+  <button onclick = "launchSynth()">Play Sampler (User input required)</button>
+  <div id = "synths" style="visibility:hidden;"></div>
+  <script type = "text/javascript">
+    
+    var synth;
+    // make clear that the origin is on mimicproject
+    var origin = "https://mimicproject.com/libs";
+    // pass the origin in when loading your instruments
+    const instruments = new MaxiInstruments(origin);
+    const launchSynth = ()=> {    
+    instruments.guiElement = document.getElementById("synths");
+    instruments.loadModules().then(()=> {
+      
+      sampler = instruments.addSampler();
+      sampler.loadSample("909.wav", 0);
+      sampler.loadSample("909b.wav", 1);
+      sampler.loadSample("909closed.wav", 2);
+      sampler.mapped = ["rate_0"];
+      sampler.setParam("rate_0", 1)
+      //Make your own drum sequence, pitch refers to sample index
+      //24 Steps per beat
+      let drums = [
+        {p:1, s:0, v:127},
+        {p:1, s:36, v:127},
+        {p:0, s:24, v:127},
+        {p:2, s:0, v:20},
+        {p:2, s:12, v:127},
+        {p:2, s:24, v:20},
+        {p:2, s:36, v:127}
+      ]
+
+      //Set the sequences to the instruments
+      instruments.setTempo(120);
+      sampler.setSequence(drums);
+      sampler.setLoop(48);
+    }).catch((err)=> {
+      console.log("error", err);
+    });
+    }
+</script>
+</body>
+</html>
