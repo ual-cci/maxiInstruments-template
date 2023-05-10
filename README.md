@@ -7,3 +7,9 @@ This template shows you how to use the threaded audio worklet for loading audio 
 Demo is here:
 
 https://ual-cci.github.io/maxiInstruments-template/
+
+maxiInstruments is written and maintained by louismac as part of the machine learning lib for creatives, learner.js, which was created as part of the mimic project, funded by UKRI
+
+https://github.com/Louismac/learnerjs
+
+www.mimicproject.com
